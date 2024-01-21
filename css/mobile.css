@@ -1,0 +1,19 @@
+.tela {
+    height: 200vh;
+}
+.tela2{
+    width: auto;
+}
+
+.button-container {
+
+grid-template-columns: repeat(4,1fr);
+
+}
+.Btn {
+    width: 10vh;
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
