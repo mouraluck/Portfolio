@@ -1,0 +1,199 @@
+*{
+  margin: 0%;
+  border-radius: 0%;
+  box-sizing: border-box;
+}
+
+#tela {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Isso garante que o contêiner ocupe toda a altura da viewport. Você pode ajustar conforme necessário. */
+  background: #2e2c2c;
+  flex-direction: column;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+/* When you change the amount of characters in the h1, you have to change 
+the with: 14ch and  steps(14, end), if there is 14 characters, put 14, 
+if there is 20 put 20 */
+.animation {
+  font: bold 200% Consolas, Monaco, monospace;
+  margin-bottom: 20px;
+  border-right: .1em solid black;
+  width: 13.20ch;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 5s steps(13, end),
+	           blink-caret .5s step-end infinite alternate;
+}
+/* === removing default button style ===*/
+.button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* button styling */
+.button {
+  --border-right: 6px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hover-text {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.button:hover .hover-text {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
+.one-div {
+  display: flex; 
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 10px;
+  width: 20em;
+  height: 25em;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#6a5acd, #6a5acd),
+    repeating-linear-gradient(
+      to bottom,
+      #48d1cc,
+      #48d1cc 0.1em,
+      #6a5acd 0.1em,
+      #6a5acd 0.4em,
+      transparent 0.4em,
+      transparent 0.9em
+    ),
+    linear-gradient(#6acd 40%, #48cc),
+    radial-gradient(circle, #48d1cc 30%, rgba(72, 209, 204, 0) 31%),
+    radial-gradient(circle, #7fffd4 50%, rgba(127, 255, 212, 0) 51%),
+    linear-gradient(#41cc, #d1cc),
+    linear-gradient(60deg, transparent 40%, #483d8b 41%),
+    linear-gradient(-60deg, transparent 40%, #483d8b 41%),
+    linear-gradient(to right, #48d1cc 0.1em, #483d8b 0.1em),
+    linear-gradient(to bottom, #231e44 30%, #c71585);
+  background-size: calc(100% - 0.4em) 2em, calc(100% - 0.6em) 6em, 0.1em 20em,
+    1.1em 1.1em, 10em 10em, 5em 0.1em, 3.5em 2em, 3.5em 2em, 0.4em 5em,
+    100% 100%;
+  background-position: 50% 0.2em, 50% 2.7em, 1.1em 0.2em, 0.6em 19em, 80% 18%,
+    right 3.8em bottom 2em, right 6em bottom 0, right 3em bottom 0,
+    right 6em bottom 0, 0 0;
+  border: 0.1em solid #48d1cc;
+  border-top-color: #6a5acd;
+  box-shadow: 0 0 0 0.8em #483d8b, 0 0 0 0.9em #6a5acd;
+}
+
+.one-div::before {
+  width: 24em;
+  height: 2em;
+  background-color: #483d8b;
+  border: 0.1em solid #6a5acd;
+  border-top-color: #54c8c4;
+  box-shadow: 0 1.4em 0 -0.8em #483d8b, 0 1.4em 0 -0.7em #6a5acd;
+}
+
+.one-div::after {
+  background-color: #483d8b;
+  border-radius: 2em 0;
+  border-top: 0.1em solid #1d2d2d;
+}
+
+.Btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  /* overflow: hidden; */
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #7289da;
+  z-index: -1;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+#github .BG  {
+  background: #181818;
+}
+#linkedin .BG  {
+  background: #0077b5;
+}
+#spotify .BG  {
+  background: #141414;
+}
+
+.Btn:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.Btn:hover .svgContainer {
+  border: 1px solid rgba(206, 206, 206, 0.466);
+  background-color: rgba(214, 214, 214, 0.466);
+  backdrop-filter: blur(4px);
+}
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px; /* Ajuste conforme necessário */
+}
