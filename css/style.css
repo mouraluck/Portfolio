@@ -1,16 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 *{
   margin: 0%;
   border-radius: 0%;
   box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
 #tela {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh; /* Isso garante que o contêiner ocupe toda a altura da viewport. Você pode ajustar conforme necessário. */
-  background: #c5c5c5;
+  background: #2e2e2e;
   flex-direction: column;
 }
 @keyframes typing {
