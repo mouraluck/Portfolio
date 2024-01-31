@@ -35,3 +35,28 @@ document.addEventListener("DOMContentLoaded", function() {
   // Adiciona o evento onchange ao checkbox
   document.getElementById("dark").addEventListener("change", changeBackground);
 });
+
+window.sr = ScrollReveal({ reset: true });
+sr.reveal('.sumir',{duration: 2000});
+
+
+$(document).ready(function() {
+  $("a").on("click", function (event) {
+      if (this.hash !== "") {
+          event.preventDefault();
+
+          const hash = this.hash;
+          let offset = $(hash).offset().top;
+
+          // Ajuste do deslocamento para considerar a altura da barra de navegação
+          offset -= $("#navbar").outerHeight();
+
+          $("html, body").animate(
+              {
+                  scrollTop: offset
+              },
+              800
+          );
+      }
+  });
+});

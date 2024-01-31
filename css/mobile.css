@@ -9,9 +9,6 @@
 }
 #logo h1{
     display: none;
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.8rem;
-    color: #9326a8cc;
   }
 .about{
     width: auto;

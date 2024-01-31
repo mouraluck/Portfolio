@@ -311,20 +311,23 @@ if there is 20 put 20 */
   grid-template-columns: repeat(3,1fr);
   
 }
+.sumir {
+  visibility: hidden;
+}
 #about h1 {
-  position: relative;
+  display: flex;
+  padding: 100px;
   font-size: 3.5rem;
   font-family: "Merriweather Sans", sans-serif;
 }
 #about {
-
+align-items: center;
   background-color: #080606;
-  height: 100vh;
+  height: 120vh;
   align-items: center;
   color: #9326a8cc;
 }
 #about-container {
-  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
@@ -332,9 +335,8 @@ flex-direction: row;
 }
 #texts {
   position: relative;
-  left: 500px;
+  left: 400px;
   width: 300px;
-  margin-right: 100px;
 }
 #foto img{
   position: relative;
@@ -398,8 +400,27 @@ flex-direction: row;
     transform: rotate(25deg);
   }
 }
-#foot {
-  height: 40px;
-  background-color: #9326a8cc;
+#formation
+{
+  display: flex;
+height: 200vh;
+flex-direction: column;
+}
+#formation-container{
+display: flex;
+align-items:flex-start;
+height: 100%;
+
+}
+#form-img img{
+height: 300px;
+}
+#form-text
+{
+  font-size: 1.5rem;
+width: 500px;
+}
+#contact {
+  height: 300px;
   width: 100%;
 }
