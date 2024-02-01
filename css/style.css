@@ -400,6 +400,13 @@ flex-direction: row;
     transform: rotate(25deg);
   }
 }
+#formation-title {
+  color: #9326a8cc;
+  display: flex;
+  padding: 100px;
+  font-size: 3.5rem;
+  font-family: "Merriweather Sans", sans-serif;
+}
 #formation
 {
   display: flex;
@@ -407,8 +414,10 @@ height: 200vh;
 flex-direction: column;
 }
 #formation-container{
+  padding: 80px;
 display: flex;
-align-items:flex-start;
+justify-content: space-between;
+align-items: center;
 height: 100%;
 
 }
@@ -417,10 +426,25 @@ height: 300px;
 }
 #form-text
 {
+  color: #9326a8cc;
   font-size: 1.5rem;
 width: 500px;
 }
 #contact {
   height: 300px;
   width: 100%;
+}
+#contact-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#textos {
+  display: flex;
+  flex-direction: column;
+}
+#textos h3{
+  color:#9326a8cc;
+  display: flex;
+  padding: 10px;
 }
