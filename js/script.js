@@ -60,20 +60,3 @@ $(document).ready(function() {
       }
   });
 });
-window.addEventListener('scroll', function() {
-  var scrollTop = window.scrollY;
-  var windowHeight = window.innerHeight;
-  var box = document.querySelector('.aparecer');
-  var distanceFromBottom = box.getBoundingClientRect().bottom;
-
-  // Defina uma distância para quando o item deve começar a aparecer
-  var triggerPoint = windowHeight * 0.75;
-
-  if (distanceFromBottom <= windowHeight && distanceFromBottom > triggerPoint) {
-    // Calcula a opacidade exponencialmente conforme o item se aproxima do topo da tela
-    var opacity = 1 - Math.pow(1 - (distanceFromBottom / triggerPoint), 2);
-    box.style.opacity = opacity;
-  } else {
-    box.style.opacity = 0;
-  }
-});
