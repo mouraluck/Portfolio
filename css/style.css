@@ -78,6 +78,7 @@ if there is 20 put 20 */
 .animation {
   font: bold 200% Consolas, Monaco, monospace;
   margin-bottom: 20px;
+  margin-left: 60px;
   border-right: .1em solid black;
   width: 13.20ch;
   white-space: nowrap;
@@ -85,50 +86,7 @@ if there is 20 put 20 */
   -webkit-animation: typing 5s steps(13, end),
 	           blink-caret .5s step-end infinite alternate;
 }
-/* === removing default button style ===*/
-.button {
-  margin: 20px;
-  height: auto;
-  background: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
 
-/* button styling */
-.button {
-  --border-right: 6px;
-  --text-stroke-color: rgba(255,255,255,0.6);
-  --animation-color: #37FF8B;
-  --fs-size: 2em;
-  letter-spacing: 3px;
-  text-decoration: none;
-  font-size: var(--fs-size);
-  font-family: "Arial";
-  position: relative;
-  text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--text-stroke-color);
-}
-/* this is the text, when you hover on button */
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-/* hover */
-.button:hover .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
-}
 .one-div {
   
   display: flex; 
@@ -334,6 +292,7 @@ align-items: center;
 flex-direction: row;
 }
 #texts {
+  font-family: "Merriweather Sans", sans-serif;
   position: relative;
   left: 400px;
   width: 300px;
@@ -410,7 +369,7 @@ flex-direction: row;
 #formation
 {
   display: flex;
-height: 200vh;
+height: 140vh;
 flex-direction: column;
 }
 #formation-container{
@@ -418,14 +377,17 @@ flex-direction: column;
 display: flex;
 justify-content: space-between;
 align-items: center;
-height: 100%;
+height: 80vh;
 
 }
 #form-img img{
 height: 300px;
+position: relative;
+left: 40px;
 }
 #form-text
 {
+  font-family: "Merriweather Sans", sans-serif;
   color: #9326a8cc;
   font-size: 1.5rem;
 width: 500px;
