@@ -294,14 +294,15 @@ flex-direction: row;
 #texts {
   font-family: "Merriweather Sans", sans-serif;
   position: relative;
-  left: 400px;
+  left: 350px;
   width: 300px;
+  bottom: 100px;
 }
-#foto img{
+#foto img {
   position: relative;
   left: 150px;
+  bottom: 150px;
   display: flex;
-  border-radius: 50%;
   position: relative;
   align-items: center;
 }
