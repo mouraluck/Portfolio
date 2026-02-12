@@ -1,404 +1,1438 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lucas Moura — Desenvolvedor Back‑end</title>
-  <meta name="description" content="Portfólio de Lucas Moura, Desenvolvedor Back-end. Projetos, tech stack, contatos e currículo (PT/EN)." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Moura | Backend Developer</title>
+    <meta name="description"
+        content="Portfólio de Lucas Moura, Desenvolvedor Backend. Java, C#, Spring Boot, .NET, Clean Architecture." />
 
-  <!-- Open Graph / Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Lucas Moura — Desenvolvedor Back‑end" />
-  <meta property="og:description" content="Portfólio, projetos, tech stack e contato." />
-  <meta property="og:image" content="https://cdn.discordapp.com/attachments/820086474757636129/1159313914392236113/download20231003231524.png?ex=689df078&is=689c9ef8&hm=7d7c39b3e7ba0fc3b1593d863de9651445b8d54975a8f75c907ae442506fa3fe&" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lucas Moura — Backend Developer" />
+    <meta property="og:description" content="Portfólio interativo. Java, .NET, Clean Architecture, Microservices." />
+    <meta property="og:image"
+        content="https://cdn.discordapp.com/attachments/820086474757636129/1159313914392236113/download20231003231524.png?ex=689df078&is=689c9ef8&hm=7d7c39b3e7ba0fc3b1593d863de9651445b8d54975a8f75c907ae442506fa3fe&" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (opcional) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23110F3E'/><text x='50' y='62' font-size='56' text-anchor='middle' fill='%234582F7' font-family='Arial, Helvetica, sans-serif'>LM</text></svg>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #050507;
+            --bg-card: rgba(15, 15, 20, 0.9);
+            --accent-cyan: #00f2ff;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-green: #10b981;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --grid-line: rgba(255, 255, 255, 0.03);
+            --node-border: rgba(255, 255, 255, 0.1);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --glow-color: 0, 242, 255;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --card-border: rgba(255, 255, 255, 0.06);
+            --card-hover-bg: rgba(0, 242, 255, 0.03);
+            --card-hover-border: rgba(0, 242, 255, 0.15);
+            --modal-bg: #0a0e17;
+            --modal-overlay: rgba(0, 0, 0, 0.85);
+            --modal-inset: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            --btn-bg: rgba(0, 242, 255, 0.06);
+            --btn-border: rgba(0, 242, 255, 0.2);
+            --btn-hover-bg: rgba(0, 242, 255, 0.12);
+            --btn-hover-text: #fff;
+            --bar-track: rgba(255, 255, 255, 0.05);
+            --title-color: #fff;
+            --badge-bg: rgba(255, 255, 255, 0.05);
+            --pulse-rgb: 0, 242, 255;
+            --gh-bg: 0a0e17;
+            --gh-text: e2e8f0;
+            --gh-title: 00f2ff;
+        }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        [data-theme="light"] {
+            --bg-deep: #f4f0fa;
+            --bg-card: rgba(255, 255, 255, 0.85);
+            --accent-cyan: #7c3aed;
+            --accent-blue: #6d28d9;
+            --accent-purple: #581c87;
+            --accent-green: #0d9488;
+            --text-main: #1e1b4b;
+            --text-dim: #64748b;
+            --grid-line: rgba(124, 58, 237, 0.04);
+            --node-border: rgba(124, 58, 237, 0.12);
+            --glow-color: 124, 58, 237;
+            --card-bg: rgba(124, 58, 237, 0.03);
+            --card-border: rgba(124, 58, 237, 0.08);
+            --card-hover-bg: rgba(124, 58, 237, 0.05);
+            --card-hover-border: rgba(124, 58, 237, 0.2);
+            --modal-bg: #ffffff;
+            --modal-overlay: rgba(30, 27, 75, 0.4);
+            --modal-inset: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            --btn-bg: rgba(124, 58, 237, 0.06);
+            --btn-border: rgba(124, 58, 237, 0.18);
+            --btn-hover-bg: rgba(124, 58, 237, 0.1);
+            --btn-hover-text: #1e1b4b;
+            --bar-track: rgba(124, 58, 237, 0.08);
+            --title-color: #1e1b4b;
+            --badge-bg: rgba(124, 58, 237, 0.06);
+            --pulse-rgb: 124, 58, 237;
+            --gh-bg: ffffff;
+            --gh-text: 1e1b4b;
+            --gh-title: 7c3aed;
+        }
 
-  <style>
-    :root {
-      --bg: #0C0A27;        /* base de fundo */
-      --bg-elev: #110F3E;   /* cards e seções */
-      --pri: #4582F7;       /* azul destaque */
-      --pri-2: #6BA0FF;     /* azul claro */
-      --txt: #E6E8F2;       /* texto principal */
-      --muted: #9EA5C0;     /* texto secundário */
-      --ok: #22c55e;
-      --warn: #f59e0b;
-      --err: #ef4444;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-      --shadow-sm: 0 6px 18px rgba(0,0,0,.25);
-      --maxw: 1100px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(69,130,247,.08), transparent),
-                  radial-gradient(900px 500px at 120% 10%, rgba(107,160,255,.06), transparent),
-                  var(--bg);
-      color: var(--txt);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
+        body {
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    /* --- Layout utilitário --- */
-    .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-    .grid { display: grid; gap: 20px; }
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-sm);
-      backdrop-filter: blur(6px);
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: linear-gradient(180deg, var(--pri), #3b78ea);
-      color: #fff; text-decoration: none; font-weight: 600;
-      padding: .8rem 1.1rem; border-radius: 999px; border: 0;
-      box-shadow: 0 8px 20px rgba(69,130,247,.35);
-      transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
-      will-change: transform;
-    }
-    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(69,130,247,.45); filter: brightness(1.05); }
-    .btn.ghost { background: rgba(255,255,255,.04); color: var(--txt); border: 1px solid rgba(255,255,255,.12); box-shadow: none; }
-    .btn.ghost:hover { background: rgba(255,255,255,.07); }
-    .pill { padding: .35rem .7rem; border-radius: 999px; font-size: .8rem; border: 1px solid rgba(255,255,255,.15); color: var(--pri-2); }
+        .matrix-bg {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(var(--grid-line) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+            z-index: 0;
+        }
 
-    /* --- Navbar --- */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(12,10,39,.75), rgba(12,10,39,.35));
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display:flex; align-items:center; gap:.6rem; font-weight:700; letter-spacing:.3px; }
-    .brand .logo { width: 28px; height: 28px; border-radius: 8px; background: #110F3E; display:grid; place-items:center; color: var(--pri); font-weight:800; box-shadow: inset 0 0 0 2px rgba(69,130,247,.35);}
-    .nav-links { display: flex; gap: 10px; align-items:center; }
-    .nav-links a { color: var(--muted); text-decoration: none; padding:.55rem .8rem; border-radius: 10px; font-weight:600; }
-    .nav-links a.active, .nav-links a:hover { color: var(--txt); background: rgba(255,255,255,.06); }
-    .menu-btn { display:none; background:none; border:0; color: var(--txt); font-size: 1.4rem; }
+        .stage {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 800px;
+            perspective: 2000px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
 
-    /* --- Hero --- */
-    .hero { padding: 80px 0 40px; }
-    .hero-wrap { display:grid; grid-template-columns: 1.1fr .9fr; gap: 28px; align-items: center; }
-    .hero h1 { font-size: clamp(1.9rem, 1.5rem + 1.8vw, 3rem); margin: 0 0 .6rem; line-height:1.15; }
-    .hero p.lead { color: var(--muted); margin: .2rem 0 1.2rem; max-width: 58ch; }
-    .badges { display:flex; flex-wrap: wrap; gap: 10px; margin: 14px 0 22px; }
-    .hero .media { border-radius: var(--radius); overflow:hidden; border: 1px solid rgba(255,255,255,.08); box-shadow: var(--shadow); }
-    .hero .media img { display: block; width: 100%; height: auto; }
+        .isometric-view {
+            position: relative;
+            width: 800px;
+            height: 500px;
+            transform-style: preserve-3d;
+            transform: rotateX(55deg) rotateZ(-35deg) translateY(-50px);
+            transition: var(--transition);
+        }
 
-    /* --- Sections --- */
-    section { padding: 60px 0; }
-    .section-title { display:flex; align-items:center; gap:12px; margin-bottom: 18px; }
-    .section-title h2 { margin:0; font-size: clamp(1.3rem,1.1rem + .9vw,1.8rem); }
-    .section-title .rule { flex:1; height:1px; background: linear-gradient(90deg, rgba(69,130,247,.35), transparent 60%); }
+        .pipeline-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            transform-style: preserve-3d;
+        }
 
-    /* --- Sobre --- */
-    .about .card { padding: 22px; }
-    .about .grid { grid-template-columns: 1fr; }
+        .pipeline-svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
 
-    /* --- Stack --- */
-    .stack .icons { display:flex; flex-wrap: wrap; gap: 14px; }
-    .stack .icons img { width: 40px; height: 40px; filter: drop-shadow(0 4px 14px rgba(0,0,0,.35)); }
+        .flow-path {
+            fill: none;
+            stroke: var(--accent-blue);
+            stroke-width: 2;
+            stroke-dasharray: 10 15;
+            opacity: 0.3;
+        }
 
-    /* --- Projetos --- */
-    .projects .grid { grid-template-columns: repeat(3, 1fr); }
-    .project-card { display:flex; flex-direction: column; padding: 18px; }
-    .project-card h3 { margin: 6px 0 6px; font-size: 1.05rem; }
-    .project-card p { margin: 0 0 10px; color: var(--muted); font-size: .95rem; }
-    .project-card .actions { margin-top: auto; display:flex; gap:10px; }
+        .data-packet {
+            fill: var(--accent-cyan);
+            filter: drop-shadow(0 0 6px rgba(var(--glow-color), 0.4));
+        }
 
-    /* --- Resumo --- */
-    .resume .grid { grid-template-columns: repeat(2, 1fr); }
-    .resume .card { padding: 18px; display:flex; align-items:center; justify-content:space-between; gap: 16px; }
+        .node {
+            position: absolute;
+            width: 200px;
+            height: 130px;
+            background: var(--bg-card);
+            border: 1px solid var(--node-border);
+            border-radius: 12px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            transition: var(--transition);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
 
-    /* --- Contato --- */
-    .contact .grid { grid-template-columns: repeat(2, 1fr); }
-    .contact .card { padding: 18px; display:flex; flex-direction:column; gap: 12px; }
-    .contact .field { display:flex; gap: 8px; }
-    .contact input {
-      flex: 1; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
-      border-radius: 12px; color: var(--txt); padding: .75rem .9rem; outline: none;
-    }
+        .node:hover {
+            border-color: var(--accent-cyan);
+            transform: translateZ(20px);
+            box-shadow: 0 20px 40px rgba(var(--glow-color), 0.12);
+        }
 
-    /* --- Footer --- */
-    footer { padding: 24px 0 46px; color: var(--muted); border-top: 1px solid rgba(255,255,255,.08); }
+        .node::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            background: linear-gradient(135deg, transparent, rgba(var(--glow-color), 0.04));
+            pointer-events: none;
+        }
 
-    /* --- Responsivo --- */
-    @media (max-width: 980px) {
-      .hero-wrap { grid-template-columns: 1fr; }
-      .projects .grid { grid-template-columns: repeat(2, 1fr); }
-      .resume .grid, .contact .grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 680px) {
-      .nav-links { display:none; position: absolute; top: 64px; right: 12px; left: 12px; flex-direction: column; gap: 6px; background: rgba(12,10,39,.9); border:1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 10px; }
-      .nav-links.show { display:flex; }
-      .menu-btn { display:block; }
-      .projects .grid { grid-template-columns: 1fr; }
-    }
-  </style>
+        .node-header {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-cyan);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .node-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .node-status {
+            font-size: 11px;
+            color: var(--text-dim);
+            line-height: 1.4;
+        }
+
+        #node-user {
+            top: 10%;
+            left: 0%;
+        }
+
+        #node-client {
+            top: 35%;
+            left: 35%;
+        }
+
+        #node-auth {
+            top: 0%;
+            left: 70%;
+        }
+
+        #node-resource {
+            top: 70%;
+            left: 70%;
+        }
+
+        #node-xp {
+            top: 70%;
+            left: 5%;
+        }
+
+        .ui-overlay {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 370px;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .brand-label {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--accent-cyan);
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .brand-title {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+            color: var(--title-color);
+        }
+
+        .overlay-desc {
+            color: var(--text-dim);
+            line-height: 1.6;
+            font-size: 0.92rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 8px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10px;
+            padding: 4px 10px;
+            background: rgba(124, 58, 237, 0.06);
+            border: 1px solid var(--node-border);
+            border-radius: 4px;
+            color: var(--text-dim);
+        }
+
+        .lang-toggle {
+            pointer-events: all;
+            margin-top: 18px;
+            display: inline-flex;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 6px;
+            overflow: hidden;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+        }
+
+        .lang-toggle button {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            padding: 6px 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        .lang-toggle button.active {
+            background: rgba(124, 58, 237, 0.1);
+            color: var(--accent-cyan);
+        }
+
+        .lang-toggle button:hover:not(.active) {
+            background: rgba(var(--glow-color), 0.04);
+        }
+
+        .active-log {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            width: 320px;
+            background: var(--bg-card);
+            border: 1px solid var(--node-border);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            max-height: 200px;
+            overflow-y: hidden;
+            z-index: 10;
+        }
+
+        .log-entry {
+            margin-bottom: 6px;
+            color: var(--text-dim);
+            display: flex;
+            gap: 10px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .log-time {
+            color: var(--accent-purple);
+        }
+
+        .log-msg {
+            color: var(--text-main);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--modal-overlay);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .terminal-window {
+            width: 90%;
+            max-width: 720px;
+            max-height: 85vh;
+            background: var(--modal-bg);
+            border: 1px solid rgba(var(--glow-color), 0.2);
+            border-radius: 10px;
+            box-shadow:
+                0 8px 40px rgba(var(--glow-color), 0.08),
+                0 0 80px rgba(var(--glow-color), 0.05),
+                var(--modal-inset);
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.92) translateY(20px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .terminal-window::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(var(--glow-color), 0.008) 2px,
+                    rgba(var(--glow-color), 0.008) 4px);
+            pointer-events: none;
+            z-index: 1;
+            border-radius: 10px;
+        }
+
+        .terminal-window::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20%;
+            right: 20%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+            opacity: 0.5;
+        }
+
+        .modal-overlay.active .terminal-window {
+            transform: scale(1) translateY(0);
+        }
+
+        .terminal-header {
+            background: linear-gradient(180deg, rgba(var(--glow-color), 0.06), rgba(var(--glow-color), 0.02));
+            border-bottom: 1px solid rgba(var(--glow-color), 0.1);
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .terminal-title {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 12px;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .terminal-controls {
+            display: flex;
+            gap: 8px;
+        }
+
+        .control-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .control-dot.red {
+            background: #ff5f57;
+            box-shadow: 0 0 6px rgba(255, 95, 87, 0.3);
+        }
+
+        .control-dot.yellow {
+            background: #ffbd2e;
+            box-shadow: 0 0 6px rgba(255, 189, 46, 0.3);
+        }
+
+        .control-dot.green {
+            background: #28c840;
+            box-shadow: 0 0 6px rgba(40, 200, 64, 0.3);
+        }
+
+        .control-dot:hover {
+            filter: brightness(1.3);
+            transform: scale(1.15);
+        }
+
+        .terminal-content {
+            padding: 28px;
+            overflow-y: auto;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            position: relative;
+            z-index: 2;
+        }
+
+        .terminal-content::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .terminal-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .terminal-content::-webkit-scrollbar-thumb {
+            background: rgba(var(--glow-color), 0.15);
+            border-radius: 4px;
+        }
+
+        .terminal-content h2 {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .terminal-content h2::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(var(--glow-color), 0.25), transparent);
+        }
+
+        .terminal-content h3 {
+            font-family: 'Roboto Mono', monospace;
+            color: var(--accent-purple);
+            font-size: 0.85rem;
+            margin: 24px 0 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .terminal-content p {
+            margin-bottom: 14px;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        .terminal-content strong {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .terminal-content a {
+            color: var(--accent-blue);
+            text-decoration: none;
+        }
+
+        .terminal-content a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .term-line {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px 14px;
+            background: rgba(124, 58, 237, 0.03);
+            border-left: 2px solid var(--accent-blue);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .term-line .prompt {
+            color: var(--accent-green);
+            font-family: 'Roboto Mono', monospace;
+            font-size: 13px;
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .term-line .text {
+            color: var(--text-dim);
+            font-size: 0.92rem;
+        }
+
+        .term-line .text strong {
+            color: var(--text-main);
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 18px;
+            background: var(--btn-bg);
+            color: var(--accent-cyan);
+            border: 1px solid var(--btn-border);
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-action::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(var(--glow-color), 0.08));
+            opacity: 0;
+            transition: opacity 0.25s;
+        }
+
+        .btn-action:hover {
+            background: var(--btn-hover-bg);
+            border-color: var(--accent-cyan);
+            color: var(--btn-hover-text);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(var(--glow-color), 0.12);
+        }
+
+        .btn-action:hover::before {
+            opacity: 1;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .project-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-cyan), var(--accent-blue));
+            border-radius: 8px 0 0 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-item:hover {
+            background: var(--card-hover-bg);
+            border-color: var(--card-hover-border);
+            transform: translateX(4px);
+        }
+
+        .project-item:hover::before {
+            opacity: 1;
+        }
+
+        .project-item .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .project-item h3 {
+            color: var(--title-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .project-item p {
+            margin: 0 0 14px;
+            color: var(--text-dim);
+            font-size: 0.88rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .project-tag {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10px;
+            padding: 3px 8px;
+            background: rgba(var(--glow-color), 0.08);
+            border: 1px solid rgba(var(--glow-color), 0.15);
+            border-radius: 4px;
+            color: var(--accent-cyan);
+        }
+
+        .skill-bars {
+            display: grid;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .skill-bar {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .skill-bar .label {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+            width: 100px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .skill-bar .bar {
+            flex: 1;
+            height: 6px;
+            background: var(--bar-track);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-bar .fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-blue));
+            transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .skill-bar .fill::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -1px;
+            bottom: -1px;
+            width: 8px;
+            background: var(--accent-cyan);
+            border-radius: 3px;
+            box-shadow: 0 0 8px var(--accent-cyan);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 20px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .contact-card:hover {
+            background: rgba(var(--glow-color), 0.06);
+            border-color: rgba(var(--glow-color), 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(var(--glow-color), 0.08);
+        }
+
+        .contact-card .icon {
+            font-size: 1.6rem;
+        }
+
+        .contact-card .card-label {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10px;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-card .card-value {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .xp-entry {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            padding: 18px;
+            margin-bottom: 14px;
+            transition: all 0.3s;
+        }
+
+        .xp-entry:hover {
+            border-color: rgba(var(--glow-color), 0.2);
+        }
+
+        .xp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .xp-role {
+            color: var(--title-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .xp-date {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 10px;
+            color: var(--accent-blue);
+            white-space: nowrap;
+        }
+
+        .xp-company {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+        }
+
+        .xp-entry ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .xp-entry ul li {
+            color: var(--text-dim);
+            font-size: 0.88rem;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 6px;
+        }
+
+        .xp-entry ul li::before {
+            content: '›';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        @keyframes flow {
+            from {
+                offset-distance: 0%;
+            }
+
+            to {
+                offset-distance: 100%;
+            }
+        }
+
+        .packet-anim {
+            offset-path: path(var(--path));
+            animation: flow 3s infinite cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(var(--pulse-rgb), 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(var(--pulse-rgb), 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(var(--pulse-rgb), 0);
+            }
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .isometric-view {
+                transform: scale(0.6) translateY(-50px);
+            }
+
+            .ui-overlay {
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                background: linear-gradient(to bottom, var(--bg-deep) 60%, transparent);
+            }
+
+            body {
+                flex-direction: column;
+                height: auto;
+                min-height: 100vh;
+                overflow-y: auto;
+            }
+
+            .stage {
+                height: 60vh;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
+
+            .lang-toggle {
+                justify-content: center;
+            }
+
+            .active-log {
+                display: none;
+            }
+        }
+
+        .theme-toggle {
+            pointer-events: all;
+            margin-top: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 11px;
+            color: var(--text-dim);
+            cursor: pointer;
+            background: var(--badge-bg);
+            border: 1px solid var(--node-border);
+            border-radius: 6px;
+            padding: 6px 14px;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        .theme-toggle .theme-icon {
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand"><span class="logo">LM</span> <span>Lucas Moura</span></div>
-        <button class="menu-btn" aria-label="Abrir menu" id="menuBtn">☰</button>
-        <div class="nav-links" id="navLinks">
-          <a href="#home" class="active">Início</a>
-          <a href="#sobre">Sobre</a>
-          <a href="#stack">Tech Stack</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#curriculo">Currículo</a>
-          <a href="#contato">Contato</a>
+
+    <div class="matrix-bg"></div>
+
+    <div class="ui-overlay">
+        <div class="brand-label" id="overlay-label">PORTFOLIO // 2026</div>
+        <h1 class="brand-title">Lucas Moura</h1>
+        <p class="overlay-desc" id="overlay-desc"></p>
+
+        <div class="tech-stack">
+            <div class="badge">JAVA 21</div>
+            <div class="badge">SPRING BOOT</div>
+            <div class="badge">C# / .NET</div>
+            <div class="badge">CLEAN ARCH</div>
+            <div class="badge">DOCKER</div>
+            <div class="badge">SQL SERVER</div>
         </div>
-      </nav>
+
+        <div class="lang-toggle" id="lang-toggle">
+            <button class="active" data-lang="pt">PT</button>
+            <button data-lang="en">EN</button>
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☀️</span>
+            <span class="theme-label">LIGHT</span>
+        </button>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <main id="home" class="hero">
-    <div class="container hero-wrap">
-      <div>
-        <div class="badges">
-          <span class="pill">Desenvolvedor Back-end</span>
-          <span class="pill">Java • C# • SQL</span>
+    <div class="stage">
+        <div class="isometric-view">
+            <div class="pipeline-container">
+                <svg class="pipeline-svg" viewBox="0 0 800 500">
+                    <path id="path1" class="flow-path" d="M 180 100 L 320 220" />
+                    <path id="path2" class="flow-path" d="M 500 220 L 640 100" />
+                    <path id="path3" class="flow-path" d="M 500 260 L 640 400" />
+                    <path id="path4" class="flow-path" d="M 640 160 L 640 340" style="opacity:0.2;" />
+                    <path id="path5" class="flow-path" d="M 180 400 L 320 280" style="opacity:0.2;" />
+
+                    <circle r="4" class="data-packet packet-anim"
+                        style="--path: 'M 180 100 L 320 220'; animation-delay: 0s;" />
+                    <circle r="4" class="data-packet packet-anim"
+                        style="--path: 'M 500 220 L 640 100'; animation-delay: 1s;" />
+                    <circle r="4" class="data-packet packet-anim"
+                        style="--path: 'M 500 260 L 640 400'; animation-delay: 2s;" />
+                </svg>
+            </div>
+
+            <div class="node" id="node-user" onclick="openModal('about')">
+                <div class="node-header">
+                    <div class="status-dot"></div>
+                    <span>Principal</span>
+                </div>
+                <div class="node-title" data-i18n="node_about_title"></div>
+                <div class="node-status" data-i18n="node_about_status"></div>
+            </div>
+
+            <div class="node" id="node-client" onclick="openModal('projects')">
+                <div class="node-header">
+                    <div class="status-dot"></div>
+                    <span>Gateway</span>
+                </div>
+                <div class="node-title" data-i18n="node_projects_title"></div>
+                <div class="node-status" data-i18n="node_projects_status"></div>
+            </div>
+
+            <div class="node" id="node-auth" onclick="openModal('contact')">
+                <div class="node-header">
+                    <div class="status-dot" style="background:var(--accent-purple);"></div>
+                    <span>Identity</span>
+                </div>
+                <div class="node-title" data-i18n="node_contact_title"></div>
+                <div class="node-status" data-i18n="node_contact_status"></div>
+            </div>
+
+            <div class="node" id="node-resource" onclick="openModal('stack')">
+                <div class="node-header">
+                    <div class="status-dot" style="background:var(--accent-green);"></div>
+                    <span>Persistence</span>
+                </div>
+                <div class="node-title">Tech Stack</div>
+                <div class="node-status" data-i18n="node_stack_status"></div>
+            </div>
+
+            <div class="node" id="node-xp" onclick="openModal('experience')">
+                <div class="node-header">
+                    <div class="status-dot" style="background:var(--accent-purple);"></div>
+                    <span>Service</span>
+                </div>
+                <div class="node-title" data-i18n="node_xp_title"></div>
+                <div class="node-status" data-i18n="node_xp_status"></div>
+            </div>
         </div>
-        <h1>Olá, eu sou Lucas Moura 💻</h1>
-        <p class="lead">Seja bem-vind@ ao meu portfólio. Trabalho com APIs REST, microserviços, bancos relacionais e boas práticas. Experiência com Java 21 + Spring Boot e C# /.NET, Docker e CI/CD.</p>
-        <div style="margin: 14px 0 20px; max-width: 435px;">
-          <img alt="Typing SVG" style="width:100%; height:auto" src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&random=false&width=435&lines=Ol%C3%A1+eu+sou+Lucas+Moura+%F0%9F%96%96%F0%9F%92%BB;seja+bem+vind%40+ao+meu+portf%C3%B3lio!" />
-        </div>
-        <div class="badges">
-          <a class="btn" href="#projetos">Ver projetos</a>
-          <a class="btn ghost" href="https://github.com/mouraluck" target="_blank" rel="noreferrer">GitHub</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/mouraluck" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </div>
-      <div class="media card">
-        <img src="./assets/img/animacaoLucas.png" alt="Animação ilustrativa" />
-      </div>
     </div>
-  </main>
 
-  <!-- SOBRE -->
-  <section id="sobre" class="about">
-    <div class="container">
-      <div class="section-title"><h2>Sobre mim</h2><div class="rule"></div></div>
-      <div class="grid">
-        <article class="card">
-          <p>Sou Desenvolvedor Back-end Júnior com formação técnica e experiência prática em projetos acadêmicos e de estágio. Atuando com <strong>Java 21 + Spring Boot</strong> e <strong>C#/.NET</strong> para APIs REST seguras e escaláveis, arquitetura de microserviços e boas práticas de POO.</p>
-          <p>Experiência com bancos de dados relacionais (<strong>MySQL</strong>): modelagem, consultas otimizadas e manutenção de desempenho. No dia a dia uso <strong>Maven</strong>, <strong>Hibernate</strong>, <strong>Git</strong> (GitHub/GitKraken) e <strong>Scrum</strong>.</p>
-          <p>Familiaridade com <strong>Docker</strong> e <strong>CI/CD</strong>. Autenticação e autorização com <strong>OAuth</strong>. Noções de <strong>GCP</strong>.</p>
-          <p>Na <strong>Zitec</strong>, atuo com <strong>C#</strong> e <strong>ASP.NET</strong>. Conhecimentos complementares em HTML/CSS/JS, prototipação (Canva), Office 365 e noções de <strong>FIDC</strong>.</p>
-          <p>Inglês <strong>B2</strong>. Aprendo rápido, foco em colaborar e entregar com qualidade.</p>
-        </article>
-      </div>
+    <div class="active-log" id="log-console"></div>
+
+    <div class="modal-overlay" id="modal-base">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <div class="control-dot red" onclick="closeModal()"></div>
+                    <div class="control-dot yellow"></div>
+                    <div class="control-dot green"></div>
+                </div>
+                <div class="terminal-title">
+                    <span>>_</span>
+                    <span id="modal-title">TERMINAL</span>
+                </div>
+                <div style="width:52px;"></div>
+            </div>
+            <div class="terminal-content" id="modal-body"></div>
+        </div>
     </div>
-  </section>
 
-  <!-- STACK -->
-  <section id="stack" class="stack">
-    <div class="container">
-      <div class="section-title"><h2>Tech Stack</h2><div class="rule"></div></div>
-      <div class="card" style="padding: 18px;">
-        <h3 style="margin: 0 0 10px;">🛠 Ferramentas</h3>
-        <div class="icons">
-          <img alt="HTML" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-          <img alt="CSS" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-          <img alt="JavaScript" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-          <img alt="C" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
-          <img alt="C#" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg">
-          <img alt="Java" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
-          <img alt="MySQL" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg">
-          <img alt=".NET" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-plain-wordmark.svg">
-          <img alt="Git" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
-          <img alt="Docker" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
-          <img alt="Spring" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg">
-        </div>
-      </div>
-      <div class="grid" style="margin-top: 18px; grid-template-columns: repeat(3, 1fr);">
-        <div class="card" style="padding: 16px;">
-          <strong>Sequências (GitHub Streak)</strong>
-          <img alt="GitHub Streak" style="margin-top: 10px; width:100%; height:auto" src="https://github-readme-streak-stats-9m8ugfa77-denvercoder1.vercel.app?user=mouraluck&theme=highcontrast&border_radius=5.1&locale=pt_BR&date_format=j%20M%5B%20Y%5D&background=45%2C110F3E%2C110F3E&fire=4582F7&ring=4582F7&currStreakLabel=4582F7&dates=4582F7&sideNums=4582F7" />
-        </div>
-        <div class="card" style="padding: 16px;">
-          <strong>Linguagens usadas</strong>
-          <img alt="Top Langs" style="margin-top: 10px; width:100%; height:auto" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mouraluck&layout=compact&langs_count=10&bg_color=110F3E&text_color=4582F7" />
-        </div>
-        <div class="card" style="padding: 16px;">
-          <strong>Resumo do GitHub</strong>
-          <img alt="GitHub Summary" style="margin-top: 10px; width:100%; height:auto" src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=mouraluck&theme=discord_old_blurple" />
-        </div>
-      </div>
-    </div>
-  </section>
+    <script>
+        const i18n = {
+            pt: {
+                overlay_desc: 'Desenvolvedor Backend. Especialista em arquiteturas modulares.<br>Construindo microsserviços escaláveis com <strong>Java 21</strong> & <strong>.NET</strong>.',
+                node_about_title: 'Sobre Mim',
+                node_about_status: 'Bio, Skills &<br>Background',
+                node_projects_title: 'Projetos',
+                node_projects_status: 'MyMed, BeeCrowd,<br>HeadSpace',
+                node_contact_title: 'Contato',
+                node_contact_status: 'Links, Currículo &<br>Redes',
+                node_stack_status: 'Ferramentas &<br>Estatísticas',
+                node_xp_title: 'Experiência',
+                node_xp_status: 'Zitec — Backend<br>Dev & Produto',
+                modal_about: `
+                    <h2>// WHOAMI</h2>
+                    <div class="term-line"><span class="prompt">$</span><span class="text">Desenvolvedor Backend com experiência em ciclo completo de desenvolvimento de software (Full-Stack). Especialista em arquiteturas modulares (<strong>Clean Architecture</strong>, <strong>Hexagonal</strong>) e desenvolvimento de APIs RESTful robustas com <strong>Java (Spring Boot)</strong> e <strong>C# (.NET)</strong>.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text">Vivência prática em pipelines de <strong>CI/CD</strong>, otimização de banco de dados SQL e metodologias ágeis. Focado em código limpo, testabilidade e escalabilidade. Inglês <strong>B2</strong>.</span></div>
+                    <h3>$ cat skills.conf</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><span class="label">Java 21</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Spring Boot</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+                        <div class="skill-bar"><span class="label">C# / .NET</span><div class="bar"><div class="fill" style="width:82%"></div></div></div>
+                        <div class="skill-bar"><span class="label">SQL Server</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Clean Arch</span><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Docker</span><div class="bar"><div class="fill" style="width:55%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Git</span><div class="bar"><div class="fill" style="width:88%"></div></div></div>
+                    </div>
+                    <h3>$ cat education.log</h3>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Curso Técnico em Informática</strong> — IFSP (Instituto Federal de São Paulo). Conclusão: Dezembro 2025.</span></div>
+                `,
+                modal_projects: `
+                    <h2>// REPOSITORIES</h2>
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <div class="project-header"><h3>MyMed — Sistema de Gestão de Saúde</h3><div class="status-dot" style="width:8px;height:8px;"></div></div>
+                            <p>Arquitetura de API RESTful segura com autenticação via OAuth/Google e controle de acesso por perfis (RBAC). Implementação de padrões de projeto (Repository, Service Layer). Pipeline de CI/CD para deploy automatizado.</p>
+                            <div class="project-tags"><span class="project-tag">Java 21</span><span class="project-tag">Spring Boot</span><span class="project-tag">MySQL</span><span class="project-tag">OAuth 2.0</span><span class="project-tag">CI/CD</span></div>
+                            <a href="https://github.com/Hyperion-IFSP" target="_blank" class="btn-action">→ VIEW REPO</a>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header"><h3>Exercícios — BeeCrowd</h3><div class="status-dot" style="width:8px;height:8px;background:var(--accent-purple);"></div></div>
+                            <p>Listas de exercícios e soluções em LP2 (2024).</p>
+                            <div class="project-tags"><span class="project-tag">Algoritmos</span><span class="project-tag">Lógica</span></div>
+                            <a href="https://github.com/mouraluck/LP2-2024" target="_blank" class="btn-action">→ VIEW REPO</a>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header"><h3>HeadSpace</h3><div class="status-dot" style="width:8px;height:8px;background:var(--accent-green);"></div></div>
+                            <p>Landing page estática com HTML e CSS.</p>
+                            <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">Frontend</span></div>
+                            <div><a href="https://mouraluck.github.io/Head-Space/" target="_blank" class="btn-action">◉ LIVE DEMO</a><a href="https://github.com/mouraluck/Head-Space" target="_blank" class="btn-action">→ CODE</a></div>
+                        </div>
+                    </div>
+                `,
+                modal_contact: `
+                    <h2>// CONNECT</h2>
+                    <div class="contact-grid">
+                        <a href="https://www.linkedin.com/in/mouraluck" target="_blank" class="contact-card"><span class="icon">🔗</span><span class="card-label">LinkedIn</span><span class="card-value">/mouraluck</span></a>
+                        <a href="mailto:pf.lucasmoura@gmail.com" class="contact-card"><span class="icon">✉️</span><span class="card-label">E-mail</span><span class="card-value">pf.lucasmoura@gmail.com</span></a>
+                        <a href="https://github.com/mouraluck" target="_blank" class="contact-card"><span class="icon">⚡</span><span class="card-label">GitHub</span><span class="card-value">/mouraluck</span></a>
+                    </div>
+                    <h3>$ ls ~/documents/curriculo/</h3>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <a href="https://github.com/mouraluck/mouraluck/blob/main/assets/CurriculoLucasMouraPt.pdf" target="_blank" class="btn-action">📄 CURRÍCULO (PT-BR)</a>
+                        <a href="https://github.com/mouraluck/mouraluck/blob/main/assets/CurriculoLucasMouraEn.pdf" target="_blank" class="btn-action">📄 RESUME (EN)</a>
+                    </div>
+                `,
+                modal_stack: `
+                    <h2>// SYSTEM STATUS</h2>
+                    <h3>$ cat /etc/stack.conf</h3>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Linguagens & Frameworks:</strong> Java 21, Spring Boot (Maven, Hibernate, JPA), C#, ASP.NET Core, Entity Framework.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Arquitetura & Padrões:</strong> Clean Architecture, Hexagonal, DDD, CQRS, OOP, Design Patterns, SOLID.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Banco de Dados:</strong> MySQL, SQL Server (T-SQL) — Modelagem, query tuning e stored procedures.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>DevOps & Ferramentas:</strong> Git (GitHub/GitKraken), CI/CD (Render, GitHub Actions), Docker.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Web & Auth:</strong> APIs RESTful, OAuth 2.0, Google Auth, HTML5, CSS3, JavaScript, Bootstrap.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Metodologias:</strong> Scrum, Kanban, Agile Development.</span></div>
+                    <h3>$ gh api /users/mouraluck/stats</h3>
+                    <div style="background:var(--card-bg); padding:14px; border-radius:8px; border:1px solid var(--card-border);">
+                        <img alt="GitHub Stats" style="width:100%; height:auto;" src="https://github-readme-streak-stats-9m8ugfa77-denvercoder1.vercel.app/?user=mouraluck&theme=highcontrast&border_radius=5.1&locale=pt_BR&date_format=j%20M%5B%20Y%5D&background=45%2C110F3E%2C110F3E&fire=4582F7&ring=4582F7&currStreakLabel=4582F7&dates=4582F7&sideNums=4582F7" />
+                    </div>
+                `,
+                modal_experience: `
+                    <h2>// WORK HISTORY</h2>
+                    <div class="xp-entry">
+                        <div class="xp-header"><span class="xp-role">Desenvolvedor de Software Backend Júnior</span><span class="xp-date">OUT 2025 – PRESENTE</span></div>
+                        <div class="xp-company">@ Zitec — São Paulo, SP</div>
+                        <ul>
+                            <li>Desenvolvimento e manutenção de APIs RESTful de alta performance utilizando <strong>C# e ASP.NET Core</strong>, com integração a banco de dados SQL Server.</li>
+                            <li>Implementação de princípios de <strong>Clean Architecture</strong> para desacoplamento de camadas e aumento da cobertura de testes.</li>
+                            <li>Atuação direta na definição de requisitos técnicos e soluções End-to-End junto à equipe de produtos.</li>
+                        </ul>
+                    </div>
+                    <div class="xp-entry">
+                        <div class="xp-header"><span class="xp-role">Estagiário em Desenvolvimento de Software</span><span class="xp-date">MAI 2025 – SET 2025</span></div>
+                        <div class="xp-company">@ Zitec — São Paulo, SP</div>
+                        <ul>
+                            <li>Construção de serviços backend com .NET e manutenção de interfaces legadas em ASPX/ASHX utilizando Bootstrap.</li>
+                            <li>Colaboração em controle de versão (Git) e revisão de código (Code Review) para garantir qualidade e padronização.</li>
+                        </ul>
+                    </div>
+                    <div class="xp-entry">
+                        <div class="xp-header"><span class="xp-role">Estagiário de Produto (PO/PM)</span><span class="xp-date">NOV 2024 – ABR 2025</span></div>
+                        <div class="xp-company">@ Zitec — São Paulo, SP</div>
+                        <ul>
+                            <li>Participação ativa em cerimônias Scrum (Dailies, Reviews, Plannings), auxiliando na priorização do backlog.</li>
+                            <li>Documentação técnica de User Stories e critérios de aceitação para o time de desenvolvimento.</li>
+                        </ul>
+                    </div>
+                `
+            },
+            en: {
+                overlay_desc: 'Backend Developer. Expert in modular architectures.<br>Building scalable microservices with <strong>Java 21</strong> & <strong>.NET</strong>.',
+                node_about_title: 'About Me',
+                node_about_status: 'Bio, Skills &<br>Background',
+                node_projects_title: 'Projects',
+                node_projects_status: 'MyMed, BeeCrowd,<br>HeadSpace',
+                node_contact_title: 'Contact',
+                node_contact_status: 'Links, Resume &<br>Socials',
+                node_stack_status: 'Tools &<br>Statistics',
+                node_xp_title: 'Experience',
+                node_xp_status: 'Zitec — Backend<br>Dev & Product',
+                modal_about: `
+                    <h2>// WHOAMI</h2>
+                    <div class="term-line"><span class="prompt">$</span><span class="text">Backend Developer with full-cycle software development experience (Full-Stack). Specialist in modular architectures (<strong>Clean Architecture</strong>, <strong>Hexagonal</strong>) and building robust RESTful APIs with <strong>Java (Spring Boot)</strong> and <strong>C# (.NET)</strong>.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text">Hands-on experience with <strong>CI/CD</strong> pipelines, SQL database optimization and agile methodologies. Focused on clean code, testability and scalability. English <strong>B2</strong>.</span></div>
+                    <h3>$ cat skills.conf</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><span class="label">Java 21</span><div class="bar"><div class="fill" style="width:85%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Spring Boot</span><div class="bar"><div class="fill" style="width:80%"></div></div></div>
+                        <div class="skill-bar"><span class="label">C# / .NET</span><div class="bar"><div class="fill" style="width:82%"></div></div></div>
+                        <div class="skill-bar"><span class="label">SQL Server</span><div class="bar"><div class="fill" style="width:75%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Clean Arch</span><div class="bar"><div class="fill" style="width:78%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Docker</span><div class="bar"><div class="fill" style="width:55%"></div></div></div>
+                        <div class="skill-bar"><span class="label">Git</span><div class="bar"><div class="fill" style="width:88%"></div></div></div>
+                    </div>
+                    <h3>$ cat education.log</h3>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Technical Degree in Computer Science</strong> — IFSP (Federal Institute of São Paulo). Graduated: December 2025.</span></div>
+                `,
+                modal_projects: `
+                    <h2>// REPOSITORIES</h2>
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <div class="project-header"><h3>MyMed — Health Management System</h3><div class="status-dot" style="width:8px;height:8px;"></div></div>
+                            <p>Secure RESTful API architecture with OAuth/Google authentication and role-based access control (RBAC). Design pattern implementation (Repository, Service Layer). CI/CD pipeline for automated deployments.</p>
+                            <div class="project-tags"><span class="project-tag">Java 21</span><span class="project-tag">Spring Boot</span><span class="project-tag">MySQL</span><span class="project-tag">OAuth 2.0</span><span class="project-tag">CI/CD</span></div>
+                            <a href="https://github.com/Hyperion-IFSP" target="_blank" class="btn-action">→ VIEW REPO</a>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header"><h3>Exercises — BeeCrowd</h3><div class="status-dot" style="width:8px;height:8px;background:var(--accent-purple);"></div></div>
+                            <p>Algorithm exercises and solutions in LP2 (2024).</p>
+                            <div class="project-tags"><span class="project-tag">Algorithms</span><span class="project-tag">Logic</span></div>
+                            <a href="https://github.com/mouraluck/LP2-2024" target="_blank" class="btn-action">→ VIEW REPO</a>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header"><h3>HeadSpace</h3><div class="status-dot" style="width:8px;height:8px;background:var(--accent-green);"></div></div>
+                            <p>Static landing page with HTML and CSS.</p>
+                            <div class="project-tags"><span class="project-tag">HTML</span><span class="project-tag">CSS</span><span class="project-tag">Frontend</span></div>
+                            <div><a href="https://mouraluck.github.io/Head-Space/" target="_blank" class="btn-action">◉ LIVE DEMO</a><a href="https://github.com/mouraluck/Head-Space" target="_blank" class="btn-action">→ CODE</a></div>
+                        </div>
+                    </div>
+                `,
+                modal_contact: `
+                    <h2>// CONNECT</h2>
+                    <div class="contact-grid">
+                        <a href="https://www.linkedin.com/in/mouraluck" target="_blank" class="contact-card"><span class="icon">🔗</span><span class="card-label">LinkedIn</span><span class="card-value">/mouraluck</span></a>
+                        <a href="mailto:pf.lucasmoura@gmail.com" class="contact-card"><span class="icon">✉️</span><span class="card-label">E-mail</span><span class="card-value">pf.lucasmoura@gmail.com</span></a>
+                        <a href="https://github.com/mouraluck" target="_blank" class="contact-card"><span class="icon">⚡</span><span class="card-label">GitHub</span><span class="card-value">/mouraluck</span></a>
+                    </div>
+                    <h3>$ ls ~/documents/resume/</h3>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <a href="https://github.com/mouraluck/mouraluck/blob/main/assets/CurriculoLucasMouraPt.pdf" target="_blank" class="btn-action">📄 RESUME (PT-BR)</a>
+                        <a href="https://github.com/mouraluck/mouraluck/blob/main/assets/CurriculoLucasMouraEn.pdf" target="_blank" class="btn-action">📄 RESUME (EN)</a>
+                    </div>
+                `,
+                modal_stack: `
+                    <h2>// SYSTEM STATUS</h2>
+                    <h3>$ cat /etc/stack.conf</h3>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Languages & Frameworks:</strong> Java 21, Spring Boot (Maven, Hibernate, JPA), C#, ASP.NET Core, Entity Framework.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Architecture & Patterns:</strong> Clean Architecture, Hexagonal, DDD, CQRS, OOP, Design Patterns, SOLID.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Databases:</strong> MySQL, SQL Server (T-SQL) — Modeling, query tuning & stored procedures.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>DevOps & Tools:</strong> Git (GitHub/GitKraken), CI/CD (Render, GitHub Actions), Docker.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Web & Auth:</strong> RESTful APIs, OAuth 2.0, Google Auth, HTML5, CSS3, JavaScript, Bootstrap.</span></div>
+                    <div class="term-line"><span class="prompt">$</span><span class="text"><strong>Methodologies:</strong> Scrum, Kanban, Agile Development.</span></div>
+                    <h3>$ gh api /users/mouraluck/stats</h3>
+                    <div style="background:var(--card-bg); padding:14px; border-radius:8px; border:1px solid var(--card-border);">
+                        <img alt="GitHub Stats" style="width:100%; height:auto;" src="https://github-readme-stats.vercel.app/api/top-langs/?username=mouraluck&layout=compact&langs_count=8&bg_color=0a0e17&text_color=e2e8f0&hide_border=true&title_color=00f2ff" />
+                    </div>
+                `,
+                modal_experience: `
+                    <h2>// WORK HISTORY</h2>
+                    <div class="xp-entry">
+                        <div class="xp-header"><span class="xp-role">Junior Backend Software Developer</span><span class="xp-date">OCT 2025 – PRESENT</span></div>
+                        <div class="xp-company">@ Zitec — São Paulo, SP</div>
+                        <ul>
+                            <li>Development and maintenance of high-performance RESTful APIs using <strong>C# and ASP.NET Core</strong>, with SQL Server integration.</li>
+                            <li>Implementation of <strong>Clean Architecture</strong> principles for layer decoupling and increased test coverage.</li>
+                            <li>Direct involvement in technical requirements definition and End-to-End solutions alongside the product team.</li>
+                        </ul>
+                    </div>
+                    <div class="xp-entry">
+                        <div class="xp-header"><span class="xp-role">Software Development Intern</span><span class="xp-date">MAY 2025 – SEP 2025</span></div>
+                        <div class="xp-company">@ Zitec — São Paulo, SP</div>
+                        <ul>
+                            <li>Built backend services with .NET and maintained legacy interfaces in ASPX/ASHX using Bootstrap.</li>
+                            <li>Collaborative version control (Git) and code review to ensure quality and standardization.</li>
+                        </ul>
+                    </div>
+                    <div class="xp-entry">
+                        <div class="xp-header"><span class="xp-role">Product Intern (PO/PM)</span><span class="xp-date">NOV 2024 – APR 2025</span></div>
+                        <div class="xp-company">@ Zitec — São Paulo, SP</div>
+                        <ul>
+                            <li>Active participation in Scrum ceremonies (Dailies, Reviews, Plannings), assisting with backlog prioritization.</li>
+                            <li>Technical documentation of User Stories and acceptance criteria for the development team.</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
 
-  <!-- PROJETOS -->
-  <section id="projetos" class="projects">
-    <div class="container">
-      <div class="section-title"><h2>Projetos</h2><div class="rule"></div></div>
-      <div class="grid">
-        <article class="card project-card">
-          <span class="pill">Java • Back‑end</span>
-          <h3>MyMed</h3>
-          <p>Projeto acadêmico/Time Hyperion‑IFSP. Serviços e domínio clínico.</p>
-          <div class="actions">
-            <a class="btn" href="https://github.com/Hyperion-IFSP" target="_blank" rel="noreferrer">Repositório</a>
-          </div>
-        </article>
-        <article class="card project-card">
-          <span class="pill">Algoritmos</span>
-          <h3>Exercícios — BeeCrowd</h3>
-          <p>Listas de exercícios e soluções em LP2 (2024).</p>
-          <div class="actions">
-            <a class="btn" href="https://github.com/mouraluck/LP2-2024" target="_blank" rel="noreferrer">Repositório</a>
-          </div>
-        </article>
-        <article class="card project-card">
-          <span class="pill">HTML • CSS</span>
-          <h3>HeadSpace</h3>
-          <p>Landing page estática com HTML e CSS.</p>
-          <div class="actions">
-            <a class="btn" href="https://mouraluck.github.io/Head-Space/" target="_blank" rel="noreferrer">Demo</a>
-            <a class="btn ghost" href="https://github.com/mouraluck/Head-Space" target="_blank" rel="noreferrer">Código</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+        let currentLang = 'pt';
 
-  <!-- CURRÍCULO -->
-  <section id="curriculo" class="resume">
-    <div class="container">
-      <div class="section-title"><h2>Currículo</h2><div class="rule"></div></div>
-      <div class="grid">
-        <div class="card">
-          <div>
-            <strong>Pt‑BR</strong>
-            <p style="margin:.2rem 0 0; color: var(--muted);">Versão em português.</p>
-          </div>
-          <a class="btn" href="https://github.com/mouraluck/mouraluck/blob/main/assets/CurriculoLucasMouraPt.pdf" target="_blank" rel="noreferrer">Baixar PDF</a>
-        </div>
-        <div class="card">
-          <div>
-            <strong>English</strong>
-            <p style="margin:.2rem 0 0; color: var(--muted);">Resume in English.</p>
-          </div>
-          <a class="btn" href="https://github.com/mouraluck/mouraluck/blob/main/assets/CurriculoLucasMouraEn.pdf" target="_blank" rel="noreferrer">Download PDF</a>
-        </div>
-      </div>
-    </div>
-  </section>
+        function applyLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
 
-  <!-- CONTATO -->
-  <section id="contato" class="contact">
-    <div class="container">
-      <div class="section-title"><h2>Contato</h2><div class="rule"></div></div>
-      <div class="grid">
-        <div class="card">
-          <strong>Redes</strong>
-          <div class="badges">
-            <a class="btn" href="https://www.linkedin.com/in/mouraluck" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn ghost" href="mailto:pf.lucasmoura@gmail.com">Gmail</a>
-          </div>
-        </div>
-        <div class="card">
-          <strong>Enviar e‑mail rápido</strong>
-          <div class="field">
-            <input id="emailField" type="text" value="pf.lucasmoura@gmail.com" readonly aria-label="E-mail" />
-            <button id="copyBtn" class="btn" type="button">Copiar</button>
-          </div>
-          <small style="color:var(--muted);">Clique para copiar e colar no seu cliente de e‑mail.</small>
-        </div>
-      </div>
-    </div>
-  </section>
+            document.getElementById('overlay-desc').innerHTML = i18n[lang].overlay_desc;
 
-  <footer>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap: wrap;">
-      <div>© <span id="year"></span> Lucas Moura. Todos os direitos reservados.</div>
-      <div style="display:flex; align-items:center; gap:8px;">
-        <span class="pill">Visitors</span>
-        <img alt="Contador de visitas" src="https://komarev.com/ghpvc/?username=mouraluck&label=VISUALIZA%C3%87%C3%95ES&color=4582F7&style=flat-square" />
-      </div>
-    </div>
-  </footer>
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (i18n[lang][key]) {
+                    el.innerHTML = i18n[lang][key];
+                }
+            });
 
-  <!-- A11y skip link -->
-  <a href="#home" style="position:fixed; left:-1000px; top:auto; width:1px; height:1px; overflow:hidden;">Ir para o início</a>
+            document.querySelectorAll('#lang-toggle button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+        }
 
-  <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    menuBtn.addEventListener('click', () => navLinks.classList.toggle('show'));
+        document.getElementById('lang-toggle').addEventListener('click', (e) => {
+            if (e.target.tagName === 'BUTTON') {
+                applyLang(e.target.dataset.lang);
+            }
+        });
 
-    // Active link while scrolling
-    const sections = ['home','sobre','stack','projetos','curriculo','contato'].map(id => document.getElementById(id));
-    const links = [...navLinks.querySelectorAll('a')];
-    const inView = (el) => {
-      const r = el.getBoundingClientRect();
-      return r.top <= (window.innerHeight * 0.35) && r.bottom >= (window.innerHeight * 0.35);
-    };
-    const setActive = () => {
-      const current = sections.find(inView) || sections[0];
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current.id));
-    };
-    document.addEventListener('scroll', setActive, { passive: true });
-    window.addEventListener('load', setActive);
+        applyLang('pt');
 
-    // Copy email
-    const copyBtn = document.getElementById('copyBtn');
-    copyBtn.addEventListener('click', async () => {
-      const email = document.getElementById('emailField').value;
-      try {
-        await navigator.clipboard.writeText(email);
-        copyBtn.textContent = 'Copiado!';
-        copyBtn.style.background = 'linear-gradient(180deg, var(--ok), #16a34a)';
-        setTimeout(() => { copyBtn.textContent = 'Copiar'; copyBtn.style.background = ''; }, 1500);
-      } catch (e) {
-        alert('Não foi possível copiar.');
-      }
-    });
+        const logs = [
+            "Initializing handshake...",
+            "Loading modules: [Java, Spring, .NET]...",
+            "Connecting to GitHub API...",
+            "Fetching repository metadata...",
+            "Validating PKCE Verifier...",
+            "Rendering isometric projection...",
+            "System ready. Awaiting user input.",
+            "Listening on port 8080...",
+            "Clean Architecture layers resolved.",
+            "Garbage collection started... done."
+        ];
 
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
+        const consoleEl = document.getElementById('log-console');
+        let logIndex = 0;
 
-    // Reduce motion preference (respect user)
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.querySelectorAll('img').forEach(img => { img.loading = 'lazy'; });
-    }
-  </script>
+        function addLog() {
+            if (!consoleEl) return;
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            const time = new Date().toLocaleTimeString('pt-BR', { hour12: false });
 
-  <!-- Schema.org Person -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Lucas Moura",
-    "jobTitle": "Desenvolvedor Back-end",
-    "url": "https://mouraluck.github.io/",
-    "sameAs": [
-      "https://github.com/mouraluck",
-      "https://www.linkedin.com/in/mouraluck"
-    ],
-    "email": "mailto:pf.lucasmoura@gmail.com",
-    "knowsAbout": ["Java", "C#", "Spring Boot", ".NET", "APIs REST", "Docker", "CI/CD", "MySQL", "OAuth"]
-  }
-  </script>
+            entry.innerHTML = `
+                <span class="log-time">[${time}]</span>
+                <span class="log-msg">${logs[logIndex]}</span>
+            `;
+
+            consoleEl.prepend(entry);
+            if (consoleEl.children.length > 7) {
+                consoleEl.removeChild(consoleEl.lastChild);
+            }
+
+            logIndex = (logIndex + 1) % logs.length;
+            setTimeout(addLog, 2000 + Math.random() * 3000);
+        }
+
+        if (window.innerWidth > 768) {
+            document.addEventListener('mousemove', (e) => {
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 60;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 60;
+                const view = document.querySelector('.isometric-view');
+                if (view) {
+                    view.style.transform = `rotateX(${55 + yAxis}deg) rotateZ(${-35 + xAxis}deg) translateY(-50px)`;
+                }
+            });
+        }
+
+        const modalOverlay = document.getElementById('modal-base');
+        const modalBody = document.getElementById('modal-body');
+        const modalTitle = document.getElementById('modal-title');
+
+        function openModal(type) {
+            const key = `modal_${type}`;
+            const html = i18n[currentLang][key];
+            if (html) {
+                modalBody.innerHTML = html;
+                modalTitle.textContent = type.toUpperCase() + ".EXE";
+                modalOverlay.classList.add('active');
+            }
+        }
+
+        function closeModal() {
+            modalOverlay.classList.remove('active');
+        }
+
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const themeLabel = themeToggle.querySelector('.theme-label');
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeIcon.textContent = '🌙';
+                themeLabel.textContent = 'DARK';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                themeIcon.textContent = '☀️';
+                themeLabel.textContent = 'LIGHT';
+            }
+
+            const style = getComputedStyle(document.documentElement);
+            const ghBg = style.getPropertyValue('--gh-bg').trim();
+            const ghText = style.getPropertyValue('--gh-text').trim();
+            const ghTitle = style.getPropertyValue('--gh-title').trim();
+
+            document.querySelectorAll('img[alt="GitHub Stats"]').forEach(img => {
+                const url = new URL(img.src);
+                url.searchParams.set('bg_color', ghBg);
+                url.searchParams.set('text_color', ghText);
+                url.searchParams.set('title_color', ghTitle);
+                img.src = url.toString();
+            });
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isLight = document.documentElement.hasAttribute('data-theme');
+            applyTheme(isLight ? 'dark' : 'light');
+        });
+
+        addLog();
+    </script>
 </body>
-</html>
 
+</html>
